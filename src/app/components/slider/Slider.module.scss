@@ -3,8 +3,9 @@
   width: 1200px;
   border-radius: 20px;
   height: 320px;
+  transition: background-color 0.2s;
   [class="content"] {
-    padding: 56px 77px 56px 64px;
+    padding: 56px 55px 56px 64px;
     h2 {
       font-size: 48px;
       line-height: 56px;
@@ -31,7 +32,15 @@
     }
     img {
       float: right;
-      margin-top: -56px; // as content 56px padding itself
+      margin-top: -56px; // as content has 56px padding itself
+      &[class="stickRight"] {
+        margin-right: -55px;
+        padding-left: 55px;
+      }
     }
+  }
+  &Yellow {
+    @extend .slider;
+    background-color: #FFE48F;
   }
 }
