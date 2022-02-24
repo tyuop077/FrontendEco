@@ -1,16 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
 .header {
   position: fixed;
-  height: 56px;
+  height: 80px;
   width: 100%;
   background-color: white;
   margin-top: -56px;
   left: 0;
-  box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+  box-shadow: 0 0.5px 0 #0000001E;
   z-index: 2;
 }
 
 .header_contents {
-  margin: -42px 15px;
   display: flex;
   flex-direction: row;
   align-items: end;
@@ -21,7 +22,7 @@
   padding: 15px;
   float: right;
   list-style-type: none;
-  font: 14px/27px 'Open Sans', sans-serif;
+  font: 14px/18px "Inter", sans-serif;
   font-weight: bold;
 }
 
@@ -30,4 +31,8 @@
   color: black;
   letter-spacing: 1px;
   text-underline-offset: 10px;
+}
+
+.logo {
+
 }
