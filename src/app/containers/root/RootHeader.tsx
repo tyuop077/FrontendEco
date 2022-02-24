@@ -1,26 +1,31 @@
 import styles from "./RootHeader.module.scss";
-import {Link} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 import Logo from "../../assets/EcoRus.svg";
 
 export default () => {
     // const navigate = useNavigate();
+    const location = useLocation();
     return (
         <header className={styles.header}>
-            <img className={styles.logo} src={Logo} alt="EcoRus logo"/>
-            <ul className={styles.header_contents}>
-                <li>
-                    <Link to="/">Главная</Link>
-                </li>
-                <li>
-                    <Link to="/points">Пункты сбора</Link>
-                </li>
-                <li>
-                    <Link to="/market">ЭкоМаркет</Link>
-                </li>
-                <li>
-                    <Link to="/about">О сервисе</Link>
-                </li>
-            </ul>
+            <div className={styles.container}>
+                <div className={styles.logo}>
+                    <img src={Logo} alt="EcoRus logo"/>
+                </div>
+                <ul className={styles.headLine}>
+                    {
+                        [
+                            {value: "Главная", path: "/"},
+                            {value: "Пункты сбора", path: "/points"},
+                            {value: "ЭкоМаркет", path: "/market"},
+                            {value: "О сервисе", path: "/about"},
+                        ].map(a => <li key={a.path}>
+                            <Link className={location.pathname === a.path ? "current" : undefined} to={a.path}>
+                                {a.value}
+                            </Link>
+                        </li>)
+                    }
+                </ul>
+            </div>
         </header>
     )
 }

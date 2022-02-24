@@ -4,8 +4,8 @@ import RootHeader from "./RootHeader";
 
 export default () => {
     return <>
-        <RootHeader/>
-        <div className="container">
+        <RootHeader />
+        <div className={styles.container}>
             <Outlet />
         </div>
     </>

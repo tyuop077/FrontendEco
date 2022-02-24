@@ -1,2 +1,2 @@
 export default () =>
-    <h1>Not Found</h1>
+    <h2>Упс... Ничего не найдено :(</h2>
