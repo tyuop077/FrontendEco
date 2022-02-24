@@ -1,5 +1,4 @@
 .header {
-  position: fixed;
   height: 80px;
   width: 100%;
   background-color: white;
@@ -7,7 +6,6 @@
   left: 0;
   top: 0;
   box-shadow: 0 0.5px 0 #0000001E;
-  z-index: 2;
   display: flex;
   flex-direction: row;
   justify-content: center;
