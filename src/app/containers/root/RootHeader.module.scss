@@ -1,7 +1,6 @@
 .header {
   height: 80px;
   width: 100%;
-  background-color: white;
   //margin-top: -56px;
   left: 0;
   top: 0;
@@ -34,16 +33,20 @@
       color: #000B26A3;
       transition: color 0.2s, box-shadow 0.2s;
       //transition-duration: 0.5s;
-      box-shadow: 0 42px 0 -2px #00000000;
+      box-shadow: 0 48px 0 -2px #00000000;
       border-radius: 10px;
       &[class="current"] {
         color: #000B26;
-        box-shadow: 0 42px 0 -2px #07C88E;
+        box-shadow: 0 45px 0 -2px #07C88E;
+      }
+      &:hover {
+        color: #000B26;
       }
       text-decoration: underline;
       text-decoration-color: white;
       text-underline-offset: 28px;
       text-decoration-thickness: 15px;
+      white-space: nowrap;
     }
   }
 }
