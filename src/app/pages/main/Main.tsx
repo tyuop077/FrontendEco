@@ -1,2 +1,4 @@
+import Slider from "../../components/slider/Slider";
+
 export default () =>
-    <span>Main page test</span>
+    <Slider />
