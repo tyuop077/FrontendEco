@@ -2,8 +2,10 @@ import styles from "./Slider.module.scss";
 import RecyclingFlat from "../../assets/recyclingFlat.png";
 import Trash from "../../assets/trash.png";
 import Recycling from "../../assets/recycling.png";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
+import SliderArrow from "../../assets/sliderArrow.svg";
+import {Swiper, SwiperSlide, useSwiper} from "swiper/react";
+import {Navigation} from "swiper";
+import "swiper/css";
 import {useState} from "react";
 
 export default () => {
@@ -11,6 +13,7 @@ export default () => {
     return (
         <div className={bgClass}>
             <Swiper
+
                 spaceBetween={50}
                 onSlideChange={(swiper) => {
                     setBgClass(swiper.activeIndex === 1 ? styles.sliderYellow : styles.slider)
@@ -44,6 +47,20 @@ export default () => {
                     </div>
                 </SwiperSlide>
             </Swiper>
+            <SliderArrowButton />
+            <SliderArrowButton right />
         </div>
+    )
+}
+
+const SliderArrowButton = ({right}: {right?: boolean}) => {
+    const swiper = useSwiper();
+    return (
+        <button
+            className={right ? styles.arrowR : styles.arrowL}
+            onClick={() => right ? swiper.slideNext() : swiper.slidePrev()}
+        >
+            <img alt="Slider arrow" src={SliderArrow} />
+        </button>
     )
 }
