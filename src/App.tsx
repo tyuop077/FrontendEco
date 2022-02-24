@@ -1,15 +1,14 @@
-import React from 'react';
-import logo from './logo.svg';
+import {Routes, Route} from "react-router-dom";
 import './App.scss';
+import Container from "./app/containers/root/Container";
+import MainPage from "./app/pages/main/Main";
 
-function App() {
-  return (
+export default () => (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
+        <Routes>
+            <Route path="/" element={<Container />} >
+                <Route index element={<MainPage />} />
+            </Route>
+        </Routes>
     </div>
-  );
-}
-
-export default App;
+)
