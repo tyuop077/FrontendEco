@@ -51,11 +51,35 @@
   }
 }
 
-/*.headLineRight {
+.dynamic {
   @extend .headLine;
   align-items: end;
   justify-content: flex-end;
-}*/
+  width: 100%;
+  li {
+    display: flex;
+    align-items: center;
+    color: #000B26CC;
+    fill: #000B26B8;
+    b {
+      color: black;
+    }
+    svg {
+      padding-right: 8px;
+    }
+    img {
+      padding-right: 4px;
+    }
+    &:hover {
+      color: black;
+      fill: black;
+      cursor: pointer;
+      b {
+        color: #2a3f81;
+      }
+    }
+  }
+}
 
 .logo {
   display: flex;
