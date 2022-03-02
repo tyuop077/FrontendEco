@@ -3,6 +3,10 @@ body {
   font-family: "Inter", sans-serif;
 }
 
+html, #root, body, root, .App {
+  height: 100%;
+}
+
 /*body {
   -webkit-transform: scale(0.67);
   -moz-transform: scale(0.67);

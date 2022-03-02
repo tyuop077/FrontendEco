@@ -1,14 +1,14 @@
 .footer {
-  position: absolute;
+  position: relative;
   height: 64px;
   width: 100%;
   background-color: white;
   left: 0;
-  bottom: 0;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  box-shadow: 0 -0.5px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 -0.5px 0 #0000001E;
+  margin-top: -40px;
 }
 
 .container {
@@ -19,6 +19,14 @@
   line-height: 22px;
 }
 
-.links {
-
+.contacts {
+  display: flex;
+  gap: 30px;
+  span {
+    padding-left: 10px;
+  }
+  div {
+    display: flex;
+    align-items: center;
+  }
 }
