@@ -4,7 +4,6 @@ import Trash from "../../assets/trash.png";
 import Recycling from "../../assets/recycling.png";
 import SliderArrow from "../../assets/sliderArrow.svg";
 import {Swiper, SwiperSlide, useSwiper} from "swiper/react";
-import {Navigation} from "swiper";
 import "swiper/css";
 import {useState} from "react";
 
@@ -13,7 +12,6 @@ export default () => {
     return (
         <div className={bgClass}>
             <Swiper
-
                 spaceBetween={50}
                 onSlideChange={(swiper) => {
                     setBgClass(swiper.activeIndex === 1 ? styles.sliderYellow : styles.slider)

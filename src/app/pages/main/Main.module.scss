@@ -1,0 +1,41 @@
+.blocks {
+  display: flex;
+  gap: 24px;
+  height: 300px;
+  width: 100%;
+}
+
+.block {
+  border: 1px solid #1222581E;
+  border-radius: 16px;
+  padding: 40px;
+  width: 100%;
+  h1 {
+    margin: 0;
+  }
+  p {
+    width: 275px;
+    color: #000B268E;
+  }
+  button {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    border: none;
+    background: #3E507214;
+    &:hover {
+      background: #3E50721E;
+      cursor: pointer;
+    }
+    &:active {
+      background: #3E507226;
+    }
+  }
+}
+
+.cover {
+  float: right;
+  bottom: 0;
+  right: 0;
+  margin-right: -40px;
+}
