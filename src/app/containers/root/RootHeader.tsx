@@ -4,10 +4,12 @@ import Logo from "../../assets/EcoRus.svg";
 import {ReactComponent as MapPoint} from "../../assets/MapPoint.svg";
 import {ReactComponent as EcoCoins} from "../../assets/EcoCoins.svg";
 import Avatar from "../../assets/Avatar.png";
+import {useDispatch} from "react-redux";
+import {openModal} from "../../stores/ModalSlice";
 
 export default () => {
-    // const navigate = useNavigate();
     const location = useLocation();
+    const dispatch = useDispatch();
     return (
         <header className={styles.header}>
             <div className={styles.container}>
@@ -37,7 +39,7 @@ export default () => {
                         <EcoCoins />
                         <b>1000</b>
                     </li>
-                    <li>
+                    <li onClick={() => dispatch(openModal(<p>test</p>))}>
                         <img src={Avatar} alt="Profile avatar" />
                         Алексей
                     </li>
