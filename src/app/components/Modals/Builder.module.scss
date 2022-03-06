@@ -22,12 +22,85 @@
 
 .modal {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: flex-start;
     padding: 48px;
     border-radius: 24px;
     background-color: white;
     animation: fadein 0.5s ease-out, easein 0.5s ease-out;
+    //max-width: 480px;
+    h1 {
+        margin: 0;
+        display: inline-block;
+    }
+    p {
+        max-width: 384px;
+        span {
+            color: #07C88E;
+        }
+    }
+    :global {
+        .titleBar {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+            svg {
+                cursor: pointer;
+            }
+            padding-bottom: 48px;
+        }
+        .choices {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            a {
+                color: #07C88E;
+                text-decoration: none;
+                &:hover {
+                    color: #07ab7a;
+                }
+                &:active {
+                    color: #05815c;
+                }
+            }
+        }
+        .alternative {
+            background: #3E507214;
+            color: #000B26CC;
+            margin-top: 32px;
+            &:hover {
+                background: #3E50721E;
+            }
+            &:active {
+                background: #3E507233;
+            }
+        }
+    }
+    input, button {
+        font-size: 18px;
+        margin: 12px 0;
+        padding: 16px;
+        border-radius: 8px;
+        border: 1px solid #000B2628;
+    }
+    input {
+        height: 26px;
+        width: 384px - 34px;
+    }
+    button {
+        width: 384px;
+        background: #07C88E;
+        color: white;
+        height: 56px;
+        cursor: pointer;
+        &:hover {
+            background: #07ab7a;
+        }
+        &:active {
+            background: #05815c;
+        }
+    }
 }
 
 .modalHidden {

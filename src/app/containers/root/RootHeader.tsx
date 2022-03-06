@@ -6,6 +6,7 @@ import {ReactComponent as EcoCoins} from "../../assets/EcoCoins.svg";
 import Avatar from "../../assets/Avatar.png";
 import {useDispatch} from "react-redux";
 import {openModal} from "../../stores/ModalSlice";
+import SignIn from "../../components/Modals/SignIn";
 
 export default () => {
     const location = useLocation();
@@ -39,7 +40,7 @@ export default () => {
                         <EcoCoins />
                         <b>1000</b>
                     </li>
-                    <li onClick={() => dispatch(openModal(<p>test</p>))}>
+                    <li onClick={() => dispatch(openModal(<SignIn />))}>
                         <img src={Avatar} alt="Profile avatar" />
                         Алексей
                     </li>

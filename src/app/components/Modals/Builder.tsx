@@ -9,7 +9,7 @@ export default () => {
 
     return (
         <div className={modal ? styles.overlay : styles.overlayHidden} onClick={() => dispatch(closeModal())}>
-            <div className={modal ? styles.modal : styles.modalHidden}>
+            <div className={modal ? styles.modal : styles.modalHidden} onClick={e => e.stopPropagation()}>
                 {modal}
             </div>
         </div>
