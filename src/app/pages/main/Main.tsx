@@ -1,4 +1,4 @@
-import Slider from "../../components/slider/Slider";
+import Slider from "../../components/Slider/Slider";
 import styles from "./Main.module.scss";
 import {ReactComponent as RecyclingMap} from "../../assets/RecyclingMap.svg";
 import {ReactComponent as EcologyMarket} from "../../assets/EcologyMarket.svg";
