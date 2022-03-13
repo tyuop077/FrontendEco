@@ -4,6 +4,7 @@ import {closeModal, openModal} from "../../stores/ModalSlice";
 import Register from "./Register";
 import {useFormik} from "formik";
 import * as yup from "yup";
+import PartnerRegister from "./PartnerRegister";
 
 export default () => {
     const dispatch = useDispatch();
@@ -53,7 +54,7 @@ export default () => {
         </form>
         <div className="choices">
             <a href="#" onClick={() => dispatch(openModal(<Register />))}>Войти с помощью смс</a>
-            <a href="#" onClick={() => dispatch(openModal(<Register />))}>Регистрация</a>
+            <a href="#" onClick={() => dispatch(openModal(<PartnerRegister />))}>Регистрация</a>
         </div>
     </>
 }
