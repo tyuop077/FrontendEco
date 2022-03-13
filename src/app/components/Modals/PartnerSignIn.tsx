@@ -4,18 +4,17 @@ import {closeModal, openModal} from "../../stores/ModalSlice";
 import Register from "./Register";
 import {useFormik} from "formik";
 import * as yup from "yup";
-import PartnerSignIn from "./PartnerSignIn";
 
 export default () => {
     const dispatch = useDispatch();
     const formik = useFormik({
         initialValues: {
-            phone: "",
+            email: "",
             password: ""
         },
         validationSchema: yup.object({
-            phone: yup.string()
-                .required("Введите номер телефона"),
+            email: yup.string()
+                .required("Введите почту"),
             password: yup.string()
                 .required("Введите пароль")
                 .min(8, "Пароль должен быть не меньше 8 символов")
@@ -29,15 +28,15 @@ export default () => {
         </div>
         <form onSubmit={formik.handleSubmit}>
             <input
-                type="tel"
-                placeholder="Телефон"
-                name="phone"
+                type="email"
+                placeholder="Email"
+                name="email"
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                value={formik.values.phone}
+                value={formik.values.email}
             />
-            {formik.touched.phone && formik.errors.phone ? (
-                <span className="error">{formik.errors.phone}</span>
+            {formik.touched.email && formik.errors.email ? (
+                <span className="error">{formik.errors.email}</span>
             ) : null}
             <input
                 type="password"
@@ -56,6 +55,5 @@ export default () => {
             <a href="#" onClick={() => dispatch(openModal(<Register />))}>Войти с помощью смс</a>
             <a href="#" onClick={() => dispatch(openModal(<Register />))}>Регистрация</a>
         </div>
-        <button className="alternative" onClick={() => dispatch(openModal(<PartnerSignIn />))}>Вход для партнёров</button>
     </>
 }

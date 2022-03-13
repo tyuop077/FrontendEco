@@ -2,6 +2,7 @@ import {ReactComponent as Close} from "../../assets/Close.svg";
 import {useDispatch} from "react-redux";
 import {closeModal, openModal} from "../../stores/ModalSlice";
 import Register from "./Register";
+import PartnerSignIn from "./PartnerSignIn";
 
 export default ({phone}: {phone: string}) => {
     const dispatch = useDispatch();
@@ -16,6 +17,6 @@ export default ({phone}: {phone: string}) => {
         <div className="choices">
             <a href="#" onClick={() => dispatch(openModal(<Register />))}>Не получил(-а) код</a>
         </div>
-        <button className="alternative">Вход для партнёров</button>
+        <button className="alternative" onClick={() => dispatch(openModal(<PartnerSignIn />))}>Вход для партнёров</button>
     </>
 }

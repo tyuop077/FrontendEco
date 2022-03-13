@@ -4,6 +4,7 @@ import {closeModal, openModal} from "../../stores/ModalSlice";
 import SignIn from "./SignIn";
 import Confirmation from "./Confirmation";
 import {useState} from "react";
+import PartnerSignIn from "./PartnerSignIn";
 
 export default () => {
     const dispatch = useDispatch();
@@ -18,6 +19,6 @@ export default () => {
         <div className="choices">
             <a href="#" onClick={() => dispatch(openModal(<SignIn />))}>Я уже зарегистировался(-ась)</a>
         </div>
-        <button className="alternative">Вход для партнёров</button>
+        <button className="alternative" onClick={() => dispatch(openModal(<PartnerSignIn />))}>Вход для партнёров</button>
     </>
 }
