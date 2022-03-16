@@ -1,0 +1,51 @@
+.titleBar {
+  display: flex;
+  justify-content: space-between;
+  h1 {
+    margin: 0;
+  }
+}
+
+.sortPicker {
+  float: right;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  button {
+    background: #3E507214;
+    color: #000B26CC;
+    border-radius: 61px;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    &:hover {
+      background: rgba(62, 80, 114, 0.15);
+    }
+    &:active {
+      background: rgba(62, 80, 114, 0.36);
+    }
+  }
+  :global .Active {
+    background: #060E21E0;
+    color: white;
+    &:hover {
+      background: rgba(6, 14, 33, 0.79);
+    }
+    &:active {
+      background: rgba(6, 14, 33, 0.49);
+    }
+  }
+}
+
+.market {
+  display: flex;
+  :global {
+    .filter {
+      display: flex;
+      flex-direction: column;
+      width: 282px;
+      border: 1px solid #3E507228;
+      border-radius: 16px;
+    }
+  }
+}
