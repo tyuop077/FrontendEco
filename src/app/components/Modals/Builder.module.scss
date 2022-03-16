@@ -12,6 +12,11 @@
     align-items: center;
     z-index: 2;
     animation: fadein 0.5s ease-out;
+    :global {
+        @media (max-width: 550px) {
+            background-color: #ffffff;
+        }
+    }
 }
 
 .overlayHidden {
@@ -54,6 +59,13 @@
                 cursor: pointer;
             }
             padding-bottom: 48px;
+            @media (max-width: 550px) {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: calc(100% - 40px);
+                margin: 20px;
+            }
         }
         .choices {
             display: flex;

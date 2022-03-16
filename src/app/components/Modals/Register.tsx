@@ -11,7 +11,7 @@ export default () => {
     const [phone, setPhone] = useState("");
     return <>
         <div className="titleBar">
-            <h1>Вход</h1>
+            <h1>Вход или регистрация</h1>
             <Close onClick={() => dispatch(closeModal())} />
         </div>
         <input type="tel" placeholder="Телефон" onChange={e => setPhone(e.currentTarget.value)} />
