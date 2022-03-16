@@ -1,10 +1,10 @@
 .slider {
   background: #B3EDC8;
-  width: 1200px;
+  max-width: 1200px;
   border-radius: 20px;
   height: 320px;
   transition: background-color 0.2s;
-  [class="content"] {
+  :global .content {
     padding: 56px 55px 56px 64px;
     h2 {
       font-size: 48px;
@@ -33,9 +33,12 @@
     img {
       float: right;
       margin-top: -56px; // as content has 56px padding itself
-      &[class="stickRight"] {
+      &.stickRight {
         margin-right: -55px;
         padding-left: 55px;
+      }
+      @media (max-width: 750px) {
+        margin-left: -590px;
       }
     }
   }
@@ -48,7 +51,6 @@
 .arrowL {
   z-index: 1;
   position: relative;
-  left: 0;
   width: 44px;
   height: 44px;
   background-color: white;

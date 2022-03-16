@@ -7,8 +7,18 @@ html, #root, body, root, .App {
   height: 100%;
 }
 
-/*body {
-  -webkit-transform: scale(0.67);
-  -moz-transform: scale(0.67);
-  transform: scale(0.67);
-}*/
+@media (max-width: 1270px) {
+  .App {
+    zoom: 0.8;
+  }
+}
+@media (max-width: 1000px) {
+  .App {
+    zoom: 0.7;
+  }
+}
+@media (max-width: 875px) {
+  .App {
+    zoom: 0.6;
+  }
+}

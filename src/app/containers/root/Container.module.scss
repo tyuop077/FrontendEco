@@ -1,9 +1,12 @@
 .container {
   padding: 35px 0 64px 0;
   margin: 0 auto 40px;
-  width: 1200px;
+  max-width: 1200px;
   height: auto;
   // If it's a small page (no scroll), footer wouldn't be at the bottom.
   // This makes container 100% (except header, footer and paddings) when the page is small
   min-height: calc(100% - 35px - 64px - 145px);
+  @media (max-width: 750px) {
+    margin: 0 35px;
+  }
 }
