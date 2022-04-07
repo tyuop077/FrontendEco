@@ -1,0 +1,73 @@
+.map {
+  position: absolute;
+  left: 0;
+  z-index: -1;
+  top: 80px;
+  width: 100%;
+  height: calc(100% - 100px);
+  background-color: #b6b6b6;
+}
+
+.bar {
+  display: flex;
+  height: 48px;
+  gap: 20px;
+  input, select {
+    border-radius: 8px;
+    font-size: 14px;
+    border: none;
+  }
+  input {
+    padding: 8px 20px 8px 38px;
+    width: 100%;
+  }
+  :global {
+    .search {
+      position: absolute;
+      padding-top: 16px;
+      padding-left: 12px;
+    }
+  }
+  select {
+    padding: 8px 20px;
+    width: 280px;
+  }
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.collections {
+  display: flex;
+  flex-direction: column;
+  width: 384px;
+  overflow-y: scroll;
+  margin-top: 32px;
+  //height: 650px; //calc(100% - 150px);
+  height: calc(100vh - 145px - 150px);
+  gap: 8px;
+  div {
+    background: #FFFFFF;
+    border: 1px solid #3E50721E;
+    box-shadow: 0 4px 24px #000B261E;
+    border-radius: 16px;
+    padding: 16px;
+    b {
+      display: block;
+    }
+    span {
+      color: gray;
+    }
+    img {
+      height: 78px;
+      float: left;
+      margin-right: 16px;
+    }
+  }
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
