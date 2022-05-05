@@ -1,5 +1,6 @@
 import {Routes, Route} from "react-router-dom";
 import './App.scss';
+import 'leaflet/dist/leaflet.css';
 import Container from "./app/containers/root/Container";
 import MainPage from "./app/pages/main/Main";
 import NotFound from "./app/pages/notFound/NotFound";
