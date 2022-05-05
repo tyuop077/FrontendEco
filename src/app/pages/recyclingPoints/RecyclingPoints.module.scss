@@ -4,8 +4,11 @@
   z-index: 0;
   top: 80px;
   width: 100%;
-  height: calc(100% - 100px);
+  height: calc(100% - 149px);
   background-color: #b6b6b6;
+  :global .leaflet-control-attribution {
+    display: none;
+  }
 }
 
 .bar {
