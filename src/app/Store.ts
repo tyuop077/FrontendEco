@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 import ModalSlice from "./stores/ModalSlice";
+import CachedUserSlice from "./stores/CachedUserSlice";
 
 export const Store = configureStore({
     reducer: {
-        modal: ModalSlice
+        modal: ModalSlice,
+        cachedUser: CachedUserSlice
     }
 })
 
