@@ -5,9 +5,14 @@ import {useFormik} from "formik";
 import * as yup from "yup";
 import PartnerSignIn from "./PartnerSignIn";
 import SignIn from "./SignIn";
+import {API} from "../../services/API";
+import {useState} from "react";
+import {Loader} from "../Loader/Loader";
+import Alert from "./Alert";
 
 export default () => {
     const dispatch = useDispatch();
+    const [isLoading, setLoading] = useState(false);
     const formik = useFormik({
         initialValues: {
             phone: "",
@@ -18,12 +23,17 @@ export default () => {
             email: yup.string()
                 .email("Введите ваш email"),
             phone: yup.string()
-                .required("Введите номер телефона"),
+                .matches(/\+?\d+/, "Введите номер телефона"),
             password: yup.string()
                 .required("Введите пароль")
                 .min(8, "Пароль должен быть не меньше 8 символов")
         }),
-        onSubmit: values => console.log(values)
+        onSubmit: async data => {
+            setLoading(true);
+            const res = await API.register(data);
+            if (!res.success) return openModal(<Alert message="Что-то пошло не так..." />);
+            openModal(<Alert message="Регистрация успешна" />)
+        }
     });
     return <>
         <div className="titleBar">
@@ -64,7 +74,7 @@ export default () => {
             {formik.touched.password && formik.errors.password ? (
                 <span className="error">{formik.errors.password}</span>
             ) : null}
-            <button type="submit">Зарегистрироваться</button>
+            {isLoading ? <Loader /> : <button type="submit">Зарегистрироваться</button>}
         </form>
         <div className="choices">
             <a href="#" onClick={() => dispatch(openModal(<SignIn />))}>Я уже зарегистировался(-ась)</a>
