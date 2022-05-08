@@ -1,7 +1,7 @@
 import {createSlice} from "@reduxjs/toolkit";
 
 export const cachedUserSlice = createSlice({
-    name: "modal",
+    name: "cachedUser",
     initialState: {
         value: localStorage.getItem("user_cache") ?
             JSON.parse(localStorage.getItem("user_cache")!) : undefined
