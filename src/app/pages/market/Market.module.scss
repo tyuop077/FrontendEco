@@ -20,20 +20,20 @@
     padding: 10px 20px;
     border: none;
     &:hover {
-      background: rgba(62, 80, 114, 0.15);
+      background: #3E507226;
     }
     &:active {
-      background: rgba(62, 80, 114, 0.36);
+      background: #3E50725B;
     }
   }
   :global .Active {
     background: #060E21E0;
     color: white;
     &:hover {
-      background: rgba(6, 14, 33, 0.79);
+      background: #060E21C9;
     }
     &:active {
-      background: rgba(6, 14, 33, 0.49);
+      background: #060E217C;
     }
   }
 }
@@ -42,6 +42,23 @@
   display: flex;
   :global {
     .filter {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      button {
+        background: #3E507214;
+        border-radius: 8px;
+        border: none;
+        padding: 12px 24px;
+        &:hover {
+          background: #3E50721F;
+        }
+        &:active {
+          background: #3E50725A;
+        }
+      }
+    }
+    .choices {
       display: flex;
       flex-direction: column;
       width: 282px;

@@ -4,21 +4,19 @@ import styles from "./MarketFilter.module.scss";
 interface Props {
     label: string,
     options: Record<string, string>,
-    onChange: (value: string[]) => void
+    onChange: (value: string[]) => void,
+    selected: string[]
 }
 
-export default ({label, options, onChange}: Props) => {
-    const [array, setArray] = useState<string[]>([]);
+export default ({label, options, onChange, selected}: Props) => {
     const onArrayChange = (e: ChangeEvent<HTMLInputElement>) => {
         if (e.currentTarget.checked) {
-            const val = e.currentTarget.id === `all_${label}` ? Object.keys(options) : [...array, e.currentTarget.id];
-            setArray(val);
+            const val = e.currentTarget.id === `all_${label}` ? Object.keys(options) : [...selected, e.currentTarget.id];
             onChange(val);
         } else {
-            const set = new Set(array);
+            const set = new Set(selected);
             set.delete(e.currentTarget.id);
             const val = e.currentTarget.id === `all_${label}` ? [] : Array.from(set);
-            setArray(val);
             onChange(val);
         }
     }
@@ -30,7 +28,7 @@ export default ({label, options, onChange}: Props) => {
                     type="checkbox"
                     id={value}
                     onChange={onArrayChange}
-                    checked={value === `all_${label}` ? array.length === Object.keys(options).length : array.includes(value)}
+                    checked={value === `all_${label}` ? selected.length === Object.keys(options).length : selected.includes(value)}
                 />
                 <label htmlFor={value}>{text}</label>
             </div>)}
