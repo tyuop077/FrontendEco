@@ -13,26 +13,37 @@ import Alert from "./Alert";
 export default () => {
     const dispatch = useDispatch();
     const [isLoading, setLoading] = useState(false);
+    const [error, setError] = useState("");
     const formik = useFormik({
         initialValues: {
             phone: "",
             email: "",
-            password: ""
+            password: "",
+            passwordConfirmation: ""
         },
         validationSchema: yup.object({
             email: yup.string()
+                .required("Введите ваш email")
                 .email("Введите ваш email"),
             phone: yup.string()
+                .required("Введите номер телефона")
                 .matches(/\+?\d+/, "Введите номер телефона"),
             password: yup.string()
                 .required("Введите пароль")
-                .min(8, "Пароль должен быть не меньше 8 символов")
+                .min(8, "Пароль должен быть не меньше 8 символов"),
+            passwordConfirmation: yup.string()
+                .required("Повторно введите пароль")
+                .oneOf([yup.ref("password")], "Пароли не совпадают")
         }),
         onSubmit: async data => {
             setLoading(true);
             const res = await API.register(data);
-            if (!res.success) return openModal(<Alert message="Что-то пошло не так..." />);
-            openModal(<Alert message="Регистрация успешна" />)
+            setLoading(false);
+            if (res.success) {
+                dispatch(openModal(<Alert message="Регистрация успешна" />))
+            } else {
+                setError(res.data.message ?? "Что-то пошло не так...");
+            }
         }
     });
     return <>
@@ -74,7 +85,19 @@ export default () => {
             {formik.touched.password && formik.errors.password ? (
                 <span className="error">{formik.errors.password}</span>
             ) : null}
+            <input
+                type="password"
+                placeholder="Повторите пароль"
+                name="passwordConfirmation"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values.passwordConfirmation}
+            />
+            {formik.touched.passwordConfirmation && formik.errors.passwordConfirmation ? (
+                <span className="error">{formik.errors.passwordConfirmation}</span>
+            ) : null}
             {isLoading ? <Loader /> : <button type="submit">Зарегистрироваться</button>}
+            {error ? <span className="error">{error}</span> : null}
         </form>
         <div className="choices">
             <a href="#" onClick={() => dispatch(openModal(<SignIn />))}>Я уже зарегистировался(-ась)</a>

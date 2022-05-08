@@ -1,11 +1,3 @@
-/*import {createReducer} from "@reduxjs/toolkit";
-
-const modalReducer = createReducer({
-
-}, {
-    asd:
-})*/
-
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {ReactElement} from "react";
 
@@ -16,10 +8,12 @@ export const modalSlice = createSlice({
     },
     reducers: {
         openModal: (state, action: PayloadAction<ReactElement>) => {
-            state.value = action.payload
+            state.value = action.payload;
+            document.body.style.overflow = "hidden"
         },
         closeModal: (state) => {
-            state.value = null
+            state.value = null;
+            document.body.style.overflow = "unset"
         }
     }
 })

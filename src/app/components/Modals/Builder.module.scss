@@ -12,9 +12,14 @@
     align-items: center;
     z-index: 2;
     animation: fadein 0.5s ease-out;
+    overflow-y: auto;
     :global {
         @media (max-width: 550px) {
             background-color: #ffffff;
+        }
+        .error {
+            max-width: 380px;
+            overflow-wrap: anywhere;
         }
     }
 }
