@@ -1,6 +1,7 @@
 import {ReactComponent as Close} from "../../assets/Close.svg";
 import {useDispatch} from "react-redux";
 import {closeModal, openModal} from "../../stores/ModalSlice";
+import LoginViaPhone from "./LoginViaPhone";
 import Register from "./Register";
 import {useFormik} from "formik";
 import * as yup from "yup";
@@ -21,7 +22,7 @@ export default () => {
                 .min(8, "Пароль должен быть не меньше 8 символов")
         }),
         onSubmit: values => console.log(values)
-    })
+    });
     return <>
         <div className="titleBar">
             <h1>Вход</h1>
@@ -53,7 +54,7 @@ export default () => {
             <button type="submit">Войти</button>
         </form>
         <div className="choices">
-            <a href="#" onClick={() => dispatch(openModal(<Register />))}>Войти с помощью смс</a>
+            <a href="#" onClick={() => dispatch(openModal(<LoginViaPhone />))}>Войти с помощью смс</a>
             <a href="#" onClick={() => dispatch(openModal(<Register />))}>Регистрация</a>
         </div>
         <button className="alternative" onClick={() => dispatch(openModal(<PartnerSignIn />))}>Вход для партнёров</button>

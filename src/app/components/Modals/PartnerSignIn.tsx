@@ -1,7 +1,7 @@
 import {ReactComponent as Close} from "../../assets/Close.svg";
 import {useDispatch} from "react-redux";
 import {closeModal, openModal} from "../../stores/ModalSlice";
-import Register from "./Register";
+import Register from "./LoginViaPhone";
 import {useFormik} from "formik";
 import * as yup from "yup";
 import PartnerRegister from "./PartnerRegister";

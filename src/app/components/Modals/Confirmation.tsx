@@ -1,7 +1,7 @@
 import {ReactComponent as Close} from "../../assets/Close.svg";
 import {useDispatch} from "react-redux";
 import {closeModal, openModal} from "../../stores/ModalSlice";
-import Register from "./Register";
+import Register from "./LoginViaPhone";
 import PartnerSignIn from "./PartnerSignIn";
 
 export default ({phone}: {phone: string}) => {
