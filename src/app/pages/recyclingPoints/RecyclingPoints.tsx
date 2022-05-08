@@ -13,10 +13,16 @@ export default () => <>
         <input type="text" placeholder="Поиск"/>
         <Search className="search" />
         <select name="shops">
-            <option value="test">Выбрано 3 магазина</option>
+            <option value="test" disabled selected>Выбрано 0 магазинов</option>
+            <option value="test">Выбрать все</option>
+            <option value="test">H&M</option>
+            <option value="test">P&B</option>
+            <option value="test">Adidas</option>
+            <option value="test">Nike</option>
+            <option value="test">Reebok</option>
         </select>
         <select name="materials">
-            <option value="test">Материалы</option>
+            <option value="test" disabled selected>Материалы</option>
         </select>
     </div>
     <div className={styles.container}>
