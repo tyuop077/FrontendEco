@@ -1,6 +1,13 @@
 import styles from "./Market.module.scss";
 import {useState} from "react";
 import MarketFilter from "../../components/MarketFilter/MarketFilter";
+import {ReactComponent as EcoCoins} from "../../assets/EcoCoins.svg";
+import {CachedUser} from "../../types";
+import {useSelector} from "react-redux";
+import {RootState} from "../../Store";
+import {useDispatch} from "react-redux";
+import {openModal} from "../../stores/ModalSlice";
+import SignIn from "../../components/Modals/SignIn";
 
 export default () => {
     const [filter, setFilter] = useState({
@@ -9,6 +16,8 @@ export default () => {
         item_categories: [] as string[],
         shop_ids: [] as string[]
     });
+    const cachedUser: CachedUser | undefined = useSelector((state: RootState) => state.cachedUser.value);
+    const dispatch = useDispatch();
     return <>
         <div className={styles.titleBar}>
             <h1>ЭкоМаркет</h1>
@@ -54,7 +63,24 @@ export default () => {
                     Сбросить фильтры
                 </button>
             </div>
-            {JSON.stringify(filter)}
+            <div className={styles.items}>
+                {cachedUser ? (
+                    <div className="promo">
+                        <div className="convert">
+                            <p>На вашем балансе <EcoCoins width="16" height="16" /> <b>{cachedUser.balance}</b></p>
+                            <span>Вы можете обменять их на скидку {cachedUser.balance} руб.</span>
+                        </div>
+                        <button>Получить промокод</button>
+                    </div>
+                ) : (
+                    <div className="promo">
+                        <div className="convert">
+                            <p>Авторизуйтесь, чтобы получить персональную скидку</p>
+                        </div>
+                        <button onClick={() => dispatch(openModal(<SignIn />))}>Войти</button>
+                    </div>
+                )}
+            </div>
         </div>
     </>
 }

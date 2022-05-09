@@ -70,3 +70,50 @@
     }
   }
 }
+
+.items {
+  display: flex;
+  width: 100%;
+  :global {
+    .promo, .item {
+      width: 275px;
+      height: 371px;
+    }
+    .promo {
+      display: flex;
+      flex-direction: column;
+      padding: 24px;
+      border: 1px solid #3E50721E;
+      box-shadow: 0 12px 32px #7979791E, 0 4px 24px #152D671E;
+      border-radius: 16px;
+      .convert {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        text-align: center;
+      }
+      button {
+        font-size: 18px;
+        margin: 12px 0;
+        padding: 16px;
+        border-radius: 8px;
+        border: none;
+        background: #07C88E;
+        width: 100%;
+        color: white;
+        height: 56px;
+        cursor: pointer;
+        &:hover {
+          background: #07ab7a;
+        }
+        &:active {
+          background: #05815c;
+        }
+      }
+    }
+    .item {
+
+    }
+  }
+}
