@@ -1,0 +1,16 @@
+[
+  {"name": "Nike Air Max 2021", "brand": "NIKE", "sexes": ["MAN"], "type": "SHOES",
+    "price": 1000, "popularity": 6, "createdAt": 1652221427, "image": "/mock/collection/Nike2021.png"},
+  {"name": "Nike Air Max 90 Premium", "brand": "NIKE", "sexes": ["MAN"], "type": "SHOES",
+    "price": 750, "popularity": 5, "createdAt": 1652221501, "image": "/mock/collection/Nike90Premium.png"},
+  {"name": "Adidas Alphabounce RC", "sexes": ["MAN"], "brand": "Adidas", "type": "SHOES",
+    "price": 1200, "popularity": 4, "createdAt": 1652221485, "image": "/mock/collection/AdidasAlphabounce.png"},
+  {"name": "Nike Air Max 2021 Shirt", "sexes": ["MAN"], "brand": "H&M", "type": "CLOTHES",
+    "price": 1000, "popularity": 3, "createdAt": 1652221509, "image": "/mock/collection/HMShirt.png"},
+  {"name": "Nike Air Force 1 Low", "sexes": ["MAN"], "brand": "NIKE", "type": "SHOES",
+    "price": 2100, "popularity": 2, "createdAt": 1652221526, "image": "/mock/collection/NikeFlow.png"},
+  {"name": "Example", "sexes": ["WOMAN"], "brand": "Test", "type": "DISHES",
+    "price": 1, "popularity": 1, "createdAt": 1652221420, "image": "/mock/collection/Nike2021.png"},
+  {"name": "Example2", "sexes": [], "brand": "Reebok", "type": "ACCESSORIZE",
+    "price": 10, "popularity": 0, "createdAt": 1652221423, "image": "/mock/collection/Nike2021.png"}
+]
