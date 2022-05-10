@@ -1,4 +1,4 @@
-import {LoginData} from "../types";
+import {APIMarketItem, LoginData} from "../types";
 import {Store} from "../Store";
 import {updateCachedUser} from "../stores/CachedUserSlice";
 
@@ -49,5 +49,11 @@ export class API {
             Store.dispatch(updateCachedUser())
         }
         return res
+    }
+    static async fetchMarket() {
+        // uncomment when market endpoint would have any items
+        // const res = await API._get("market");
+        // return res.data as APIMarket;
+        return await fetch("/mock/example.json").then(r => r.json()) as APIMarketItem[];
     }
 }

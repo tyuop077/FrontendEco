@@ -9,7 +9,7 @@ export interface APIUser {
     password: null,
     balance: number | null,
     role: {
-        name: "USER" | "ADMIN",
+        name: "USER" | "ADMIN" | "POINT" | "SHOP",
         localizedName: string
     }
 }
@@ -21,3 +21,22 @@ export interface CachedUser {
 }
 
 export type LoginData = {token: string} & APIUser
+
+export interface APIMarketItem {
+    name: string,
+    brand: string,
+    sexes: ["MAN"] | ["WOMAN"] | [],
+    type: string,
+    price: number,
+    image: string,
+    popularity: number,
+    createdAt: number
+}
+
+export interface MarketItem {
+    name: string,
+    brand: string,
+    label: string,
+    price: number,
+    image: string
+}
