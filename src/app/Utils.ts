@@ -15,4 +15,12 @@ export class Utils {
             default: return item
         }
     }
+    static randomString(length: number) {
+        // generates [0-9a-z] (only lowercase)
+        let str = "";
+        while (str.length < length) {
+            str += (Math.random() * 36 | 0).toString(36)
+        }
+        return str
+    }
 }

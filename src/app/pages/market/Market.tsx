@@ -10,6 +10,7 @@ import {openModal} from "../../stores/ModalSlice";
 import SignIn from "../../components/Modals/SignIn";
 import {API} from "../../services/API";
 import {Utils} from "../../Utils";
+import MarketPurchase from "../../components/Modals/MarketPurchase";
 
 export default () => {
     const [filter, setFilter] = useState({
@@ -108,7 +109,7 @@ export default () => {
                 )}
                 {market.map(i => (
                     <div className="item" key={i.name}>
-                        <div className="cover">
+                        <div className="cover" onClick={() => dispatch(openModal(<MarketPurchase />))}>
                             <span>{i.brand}</span>
                             <img src={i.image} alt={i.name} />
                         </div>

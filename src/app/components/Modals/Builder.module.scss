@@ -101,6 +101,10 @@
         .error {
             color: red;
         }
+        .center {
+            text-align: center;
+            width: 100%;
+        }
     }
     input, button {
         font-size: 18px;
@@ -114,7 +118,7 @@
         width: 384px - 34px;
     }
     button {
-        width: 384px;
+        width: 100%;
         background: #07C88E;
         color: white;
         height: 56px;
